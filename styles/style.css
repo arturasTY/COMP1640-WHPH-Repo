@@ -39,8 +39,6 @@ button:focus {
     padding-left: 1.25rem !important;
 }
 
-
-
 .navbar-nav .nav-link.activePage {
     color: #a2d729 !important;
 }
@@ -254,11 +252,6 @@ button:focus {
     margin-bottom: 30px;
 }
 
-
-
-
-
-
 section.landing {
     background: #673AB7;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #512DA8, #673AB7);  /* Chrome 10-25, Safari 5.1-6 */
@@ -337,7 +330,7 @@ section.landing .row .col-md-6:nth-child(2) {
 
 h1.idea-lead {
     font-weight: 400;
-    font-size: 5em;
+    font-size: 4.5em;
     text-transform: uppercase;
     font-weight: bold;
     margin-bottom: 10px;
@@ -355,8 +348,8 @@ h1.idea-lead span {
 
 .idea-sublead {
     font-weight: 300;
-    font-size: 1.25em;
-    opacity: .8;
+    font-size: 1.1em;
+    opacity: .7;
 }
 
 a.cta {
@@ -415,13 +408,14 @@ a.cta:focus {
     border-bottom-right-radius: 0;
 }
 
-.modal-content {
-    //padding: .85em;
-}
-
-.modal-header > h5 {
+.text-block > h5 {
     font-weight: 700;
     font-size: 1.45em;
+}
+
+.text-block p {
+    opacity: .6;
+    font-size: 14px;
 }
 
 .modal-header span {
