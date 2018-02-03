@@ -214,6 +214,7 @@ button:focus {
 
 .user-1:last-child, .idea-1:last-child {
     margin-bottom: 10px;
+    border-bottom: none;
 }
 
 .idea-1 {
@@ -352,22 +353,26 @@ h1.idea-lead span {
     opacity: .7;
 }
 
-a.cta {
+.cta {
     background-color: #a2d729;
     color: #1b1e21;
     font-size: .9em;
     margin-left: 20px;
 }
 
-a.cta:hover {
+.cta:hover {
     background-color: transparent;
     color: #a2d729;
     border-color: #a2d729;
     
 }
 
-a.cta:focus {
+.cta:focus {
     box-shadow: none;
+}
+
+.submit-idea {
+    margin-left: 0;
 }
 
 .anim-icons {
@@ -473,7 +478,7 @@ a.cta:focus {
     position: relative;
 }
 
-.form-control:focus {
+.form-control:focus, .form-control-file:focus {
     color: #495057 !important;
     background-color: rgba(162,215,41, .15);
     border-color: #a2d729 !important;
@@ -519,25 +524,45 @@ footer a > i {
     margin-right: 10px;
 }
 
-/*
-@keyframes coll {
-    0% {
-        opacity: 0;
-        transform: scale(.3);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    70% {
-        transform: scale(0.9);
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+
+/* Submit idea page */
+
+.submit-idea-title {
+    background: #a2d729;
+    color: white;
+    padding: 20px 0;
 }
-*/
+
+.submit-idea-title h1 {
+    //font-weight: 700;
+    font-size: 1.75em;
+    line-height: normal;
+}
+
+.submit-idea-title p {
+    opacity: .8;
+    color: #2C363F;
+    font-size: 15px;
+}
+
+.submit-idea-title p a {
+    text-decoration: underline;
+    color: inherit;
+}
+
+#submit-idea label:after {
+    content: " *";
+    color: #FF0000;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: text-bottom;
+    padding-left: 3px;
+}
+
+#submit-idea {
+    margin: 60px 0;
+}
+
 
 
 
