@@ -177,6 +177,15 @@ button:focus {
     font-size: 42px;
 }
 
+.add-block {
+    color: white;
+}
+
+.add-block:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
 .col-md-4 .card-body {
     display: flex !important;
     justify-content: center;
@@ -371,10 +380,6 @@ h1.idea-lead span {
     box-shadow: none;
 }
 
-.submit-idea {
-    margin-left: 0;
-}
-
 .anim-icons {
     width: 80%;
 }
@@ -384,9 +389,10 @@ h1.idea-lead span {
     width: 25%;
 }
 
-#monitor {
+#phone {
     animation: monitorIn 1s ease-in-out forwards;   /*   #FFE347  #F2FF49   */
     opacity: 0;
+    width: 260px;
 }
 
 @keyframes monitorIn {
@@ -534,7 +540,6 @@ footer a > i {
 }
 
 .submit-idea-title h1 {
-    //font-weight: 700;
     font-size: 1.75em;
     line-height: normal;
 }
@@ -560,9 +565,74 @@ footer a > i {
 }
 
 #submit-idea {
-    margin: 60px 0;
+    margin: 60px 0 100px;
 }
 
+.submit-idea {
+    margin-left: 0;
+    padding: 10px 45px;
+    color: #2C363F;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+#submit-idea .row {
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#submit-idea .upload label:after {
+    display: none !important;
+}
+
+#submit-idea .row .col-md-8 label:after {
+    display: none !important;
+}
+
+.form-check {
+    text-align: right;
+}
+
+.form-check label:after {
+    display: none !important;
+}
+
+@media only screen and (max-width: 480px) {
+    h1.idea-lead {
+        text-align: center;
+        font-size: 2.5em;
+    }
+    .idea-sublead {
+        text-align: center;
+        font-size: 14px;
+    }
+    #phone {
+        width: 150px;
+    }
+    section.landing .row .col-md-6:nth-child(2) {
+        text-align: center;
+    }
+    .common-btns {
+        margin-top: 50px;
+        margin-bottom: 30px;
+        justify-content: center;
+    }
+    .common-Button {
+        width: 130px;
+    }
+    .submit-idea-title p {
+        font-size: 14px;
+    }
+    #submit-idea {
+        margin: 30px 0 50px;
+    }
+    .form-check {
+        text-align: initial;
+    }
+    footer p {
+        font-size: 14px;
+    }
+}
 
 
 

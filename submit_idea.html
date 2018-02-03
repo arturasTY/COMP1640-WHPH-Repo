@@ -55,28 +55,48 @@
                     <label for="exampleFormControlInput1">Title</label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
                   </div>
-                  <div class="form-group">
-                    <label for="exampleFormControlSelect1">Category</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
-                  </div>
+                  
                   <div class="form-group">
                     <label for="exampleFormControlTextarea1">Description</label>
                     <textarea class="form-control" name="description" rows="5"></textarea>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleFormControlFile1">Upload File</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="form-group cat">
+                            <label for="exampleFormControlSelect1">Category</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                     </div>
+                      <div class="col-md-8">
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Tags</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                        </div>
+                      </div>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleFormControlInput1">Tags</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                  <div class="row upload">
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Upload File</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Post as anonymous
+                          </label>
+                        </div>
+                    </div>
                   </div>
+                  
                   <button type="submit" class="btn cta submit-idea">Submit</button>
                 </form>
             </div>
