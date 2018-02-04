@@ -589,7 +589,7 @@ footer a > i {
     display: none !important;
 }
 
-.form-check {
+#submit-idea .form-check {
     text-align: right;
 }
 
@@ -597,6 +597,7 @@ footer a > i {
     display: none !important;
 }
 
+/* ----------- Mobile Styles----------- */
 @media only screen and (max-width: 480px) {
     h1.idea-lead {
         text-align: center;
@@ -626,11 +627,74 @@ footer a > i {
     #submit-idea {
         margin: 30px 0 50px;
     }
-    .form-check {
+    #submit-idea .form-check {
         text-align: initial;
     }
     footer p {
         font-size: 14px;
+    }
+    .nav-scroller .nav {
+        justify-content: center;
+        padding: .5em 0;
+    }
+    .nav-underline > .nav-link {
+        padding: .5rem !important;
+    }
+    .card {
+        height: auto;
+    }
+    .card-body {
+        display: block;
+        text-align: center;
+    }
+    .avatar {
+        margin: 0 auto 10px auto;
+        width: 50px;
+        height: 50px;
+    }
+    .top-text h5 {
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    .top-text {
+        margin-bottom: 20px;
+    }
+    .thumb-block span {
+        font-size: 17px;
+    }
+    .comment-block span {
+        font-size: 12px;
+    }
+    .pagination {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .col-md-4 .card:first-child {
+        display: none;
+        visibility: hidden;
+    }
+    .top-users {
+        text-align: left;
+    }
+    .top-users .user-1 .avatar {
+        display: none;
+        visibility: hidden;
+    }
+    .user-1 {
+        grid-template-columns: auto 30%;
+    }
+    .idea-1 {
+        grid-template-columns: auto;
+    }
+    .idea-1 .avatar {
+        display: none;
+        visibility: hidden;
+    }
+    .float-right {
+        float: none !important;
+    }
+    footer p {
+        max-width: 300px;
     }
 }
 
