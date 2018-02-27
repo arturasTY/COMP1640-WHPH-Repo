@@ -698,6 +698,91 @@ footer a > i {
     }
 }
 
+.user-profile {
+    padding: 3em 1.5em;
+}
+
+.user-details-each {
+    background-color: #2C363F;
+    color: white;
+    padding: 1.5em;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.user-details-each h3 {
+    font-weight: 700;
+}
+
+.user-details-each .mybtn {
+    margin-top: 10px;
+    padding: .5em 2em;
+}
+
+.user-details-each .mybtn i {
+    padding-right: 5px;
+}
+
+.user-details-each .mybtn::after {
+    display: none;
+}
+.details {
+    display: flex;
+    justify-content: center;
+}
+
+.details p:first-child {
+    margin-right: 15px;
+}
+
+.username .last-login {
+    margin-top: 22px;
+    font-size: .9em;
+    opacity: .7;
+}
+
+.details p {
+    font-size: .9em;
+}
+
+.details p > i:first-child {
+    vertical-align: sub;
+}
+
+.username p {
+    margin: 0;
+}
+
+.username p > i {
+    font-size: 20px;
+    opacity: .5;
+    margin-right: 5px;
+}
+
+.user-ideas-each {
+    max-width: 760px;
+    margin: auto;
+}
+
+.user-ideas-each h4 {
+    margin: 30px 0;
+    text-align: center;
+}
+.username > .avatar {
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #a2d729;
+    margin-bottom: 10px;
+}
+
+.user-ideas-each > .card .thumb-block {
+    justify-self: flex-end;
+}
+
+.user-ideas-each > .card .comment-block {
+    grid-column: 1;
+}
 
 
 
