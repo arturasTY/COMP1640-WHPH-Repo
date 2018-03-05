@@ -766,7 +766,18 @@ footer a > i {
 
 .user-ideas-each h4 {
     margin: 30px 0;
-    text-align: center;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    grid-gap: 10px;
+}
+
+.user-ideas-each h4:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: rgba(0,0,0,.125);
 }
 .username > .avatar {
     margin: auto;
