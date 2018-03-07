@@ -40,12 +40,12 @@ button:focus {
 }
 
 .navbar-nav .nav-link.activePage {
-    color: #a2d729 !important;
+    color: #FDCA40 !important;
 }
 
 .nav-link:hover {
     opacity: 1 !important;
-    color: #a2d729 !important;
+    color: #FDCA40 !important;
 }
 
 .navbar-collapse {
@@ -85,8 +85,8 @@ button:focus {
 
 .card:hover {
     cursor: pointer;
-    border-color: #a2d729;
-    background-color: #e3f5b8;
+    border-color: #FDCA40;
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
 }
 
 .card:nth-child(6) {
@@ -157,13 +157,13 @@ button:focus {
 }
 
 .col-md-4 .card:first-child {
-    background-color: #a2d729;
+    background-color: #FDCA40;
     color: white;
     border: none;
 }
 
 .col-md-4 .card:first-child:hover {
-    border: 1px solid #a2d729;
+    border: 1px solid #FDCA40;
     background: transparent;
     color: black;
 }
@@ -194,7 +194,7 @@ button:focus {
 }
 .col-md-4 .card:nth-child(2), .col-md-4 .card:nth-child(3) {
     height: auto;
-    border-color: #a2d729;
+    border-color: #FDCA40;
 }
 
 .top-users {
@@ -246,7 +246,7 @@ button:focus {
 
 .top-level button {
     font-size: .75em;
-    background: #a2d729;
+    background: #FDCA40;
     padding: .2rem .45rem;
     color: white;
 }
@@ -265,7 +265,7 @@ button:focus {
 section.landing {
     background: #673AB7;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #512DA8, #673AB7);  /* Chrome 10-25, Safari 5.1-6 */
-    background: url(../images/banner-graphic.png), linear-gradient(to bottom, #f65b57, #c32635); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: url(../images/banner-graphic.png), linear-gradient(to bottom, #36D1DC, #5B86E5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     min-height: calc(100vh - 57px);
     color: white;
     display: flex;
@@ -321,7 +321,7 @@ section.landing .row .col-md-6:nth-child(2) {
 
 .common-btns li:first-child a {
     box-shadow: 0px 5px 15.04px 0.96px rgba(36,30,78, .5), 0 1px 3px rgba(0,0,0,.08);
-    background: #a2d729;
+    background: #FDCA40;
     color: #2C363F;
     letter-spacing: .7px;
     font-weight: 700;
@@ -363,7 +363,7 @@ h1.idea-lead span {
 }
 
 .cta {
-    background-color: #a2d729;
+    background-color: #FDCA40;
     color: #1b1e21;
     font-size: .9em;
     margin-left: 20px;
@@ -371,8 +371,8 @@ h1.idea-lead span {
 
 .cta:hover {
     background-color: transparent;
-    color: #a2d729;
-    border-color: #a2d729;
+    color: #FDCA40;
+    border-color: #FDCA40;
     
 }
 
@@ -454,7 +454,7 @@ h1.idea-lead span {
 }
 
 .mybtn {
-    background-color: #a2d729;
+    background-color: #FDCA40;
     color: white;
     margin-top: 50px;
     color: #1b1e21;
@@ -486,8 +486,7 @@ h1.idea-lead span {
 
 .form-control:focus, .form-control-file:focus {
     color: #495057 !important;
-    background-color: rgba(162,215,41, .15);
-    border-color: #a2d729 !important;
+    border-color: #FDCA40 !important;
     outline: 0;
     box-shadow: none;
     
@@ -534,7 +533,7 @@ footer a > i {
 /* Submit idea page */
 
 .submit-idea-title {
-    background: #a2d729;
+    background: #FDCA40;
     color: white;
     padding: 20px 0;
 }
@@ -783,7 +782,7 @@ footer a > i {
     margin: auto;
     width: 100px;
     height: 100px;
-    border: 2px solid #a2d729;
+    border: 2px solid #FDCA40;
     margin-bottom: 10px;
 }
 
