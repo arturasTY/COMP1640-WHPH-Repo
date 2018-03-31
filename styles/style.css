@@ -794,7 +794,27 @@ footer a > i {
     grid-column: 1;
 }
 
+.sidebar .nav-link {
+    color: #2C363F !important;
+}
 
+.sidebar-sticky {
+    margin-top: 1rem;
+}
+
+.logo-admin {
+    margin-bottom: 25px;
+}
+
+.logo-admin strong {
+    font-size: 1.2em;
+}
+
+.sidebar-sticky i {
+    font-size: 1.35em;
+    margin-right: 8px;
+
+}
 
 
 
