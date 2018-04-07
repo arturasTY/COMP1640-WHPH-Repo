@@ -1,8 +1,30 @@
+<?php
+session_start();
+require "../includes/db_config.php";
+
+//if(!isset($_SESSION['emp_details'])) {
+//    header("location: ../index.php");
+//}
+
+
+try {
+        $result = $db_connection->query("SELECT * FROM Grp_Department");
+    }
+    catch(PDOException $e) {
+
+   }
+
+   foreach ($result as $row) {
+        $deeps[] = array('Id' => $row['DepartmentID'], 'dep_name' => $row['Name']);
+   }
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>WHPH Administrator</title>
+    <title>WHPH Administrator | Departments</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -64,7 +86,17 @@
                 <a href="ideas.html" class="nav-link">Ideas</a>
             </li>
         </ul>
+        <?php if(isset($_SESSION['staff_details'])): ?>
+            
+            <a class="btn btn-outline cta" href="#" data-toggle="modal" data-target="#exampleModalCenter"><?php echo $_SESSION['staff_details']['name']; ?></a>
+
+
+        <?php else: ?>
+        
         <a class="btn btn-outline cta" href="#" data-toggle="modal" data-target="#exampleModalCenter">Sign in</a>
+
+        <?php endif; ?>
+        <a href="../logout.php" class="btn btn-outline cta">Logout</a>
     </div>
     </div>
 </nav>
@@ -81,37 +113,37 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="#">
+                  <a class="nav-link active" href="index.php">
                     <span data-feather="home"></span>
                     <i class="ion-ios-gear"></i>Dashboard
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="categories.php">
                     <span data-feather="file"></span>
-                    <i class="ion-ios-list"></i>Ideas
+                    <i class="ion-ios-list"></i>Categories
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="comments.php">
                     <span data-feather="shopping-cart"></span>
                     <i class="ion-ios-chatbubble"></i>Comments
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="employees.php">
                     <span data-feather="users"></span>
                     <i class="ion-ios-people"></i>Employees
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="departments.php">
                     <span data-feather="bar-chart-2"></span>
                     <i class="ion-ios-home"></i>Departments
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="reports.php">
                     <span data-feather="layers"></span>
                     <i class="ion-ios-pie"></i>Reports
                   </a>
@@ -136,132 +168,51 @@
             </div>
   
             <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
-  
-            <h2>Section title</h2>
+            <div class="export-block">
+              <h2 class="submit-id">All Departments</h2>
+                <form action="download.php" method="post">
+                    <input type="submit" name="download" class="btn cta" value="Export CSV">
+                </form>
+            </div>
+            
             <div class="table-responsive">
-              <table class="table table-striped table-sm">
-                <thead>
+              <table class="table table-striped table-bordered table-sm">
+                <thead class="thead-dark text-center">
                   <tr>
-                    <th>No.</th>
-                    <th>Header</th>
-                    <th>Header</th>
-                    <th>Header</th>
-                    <th>Header</th>
+                    <th>Department ID</th>
+                    <th>Department Name</th>
+                    <th>Employees in Department</th>
                   </tr>
                 </thead>
                 <tbody>
+                 <?php foreach($deeps as $idea) : ?>
                   <tr>
-                    <td>1,001</td>
-                    <td>Lorem</td>
-                    <td>ipsum</td>
-                    <td>dolor</td>
-                    <td>sit</td>
+                    <td><?php echo $idea['Id']; ?></td>
+                    <td><?php echo $idea['dep_name']; ?></td>
+                    <td>
+                        
+                    <?php
+                        
+                        $cem = $idea['Id'];
+                        try {
+                              $result = $db_connection->query("SELECT COUNT(Grp_employee.empID) AS na FROM Grp_employee INNER JOIN Grp_Department ON Grp_employee.Department = Grp_Department.DepartmentID WHERE Grp_Department.DepartmentID = $cem");
+                              $result ->execute(); 
+                          }
+                          catch(PDOException $e) {
+
+                          }
+
+                          $row = $result->fetch();
+
+                          $counter2 = $row['na'];
+                          
+                          echo $counter2;
+                        
+                        ?>
+
+                    </td>
                   </tr>
-                  <tr>
-                    <td>1,002</td>
-                    <td>amet</td>
-                    <td>consectetur</td>
-                    <td>adipiscing</td>
-                    <td>elit</td>
-                  </tr>
-                  <tr>
-                    <td>1,003</td>
-                    <td>Integer</td>
-                    <td>nec</td>
-                    <td>odio</td>
-                    <td>Praesent</td>
-                  </tr>
-                  <tr>
-                    <td>1,003</td>
-                    <td>libero</td>
-                    <td>Sed</td>
-                    <td>cursus</td>
-                    <td>ante</td>
-                  </tr>
-                  <tr>
-                    <td>1,004</td>
-                    <td>dapibus</td>
-                    <td>diam</td>
-                    <td>Sed</td>
-                    <td>nisi</td>
-                  </tr>
-                  <tr>
-                    <td>1,005</td>
-                    <td>Nulla</td>
-                    <td>quis</td>
-                    <td>sem</td>
-                    <td>at</td>
-                  </tr>
-                  <tr>
-                    <td>1,006</td>
-                    <td>nibh</td>
-                    <td>elementum</td>
-                    <td>imperdiet</td>
-                    <td>Duis</td>
-                  </tr>
-                  <tr>
-                    <td>1,007</td>
-                    <td>sagittis</td>
-                    <td>ipsum</td>
-                    <td>Praesent</td>
-                    <td>mauris</td>
-                  </tr>
-                  <tr>
-                    <td>1,008</td>
-                    <td>Fusce</td>
-                    <td>nec</td>
-                    <td>tellus</td>
-                    <td>sed</td>
-                  </tr>
-                  <tr>
-                    <td>1,009</td>
-                    <td>augue</td>
-                    <td>semper</td>
-                    <td>porta</td>
-                    <td>Mauris</td>
-                  </tr>
-                  <tr>
-                    <td>1,010</td>
-                    <td>massa</td>
-                    <td>Vestibulum</td>
-                    <td>lacinia</td>
-                    <td>arcu</td>
-                  </tr>
-                  <tr>
-                    <td>1,011</td>
-                    <td>eget</td>
-                    <td>nulla</td>
-                    <td>Class</td>
-                    <td>aptent</td>
-                  </tr>
-                  <tr>
-                    <td>1,012</td>
-                    <td>taciti</td>
-                    <td>sociosqu</td>
-                    <td>ad</td>
-                    <td>litora</td>
-                  </tr>
-                  <tr>
-                    <td>1,013</td>
-                    <td>torquent</td>
-                    <td>per</td>
-                    <td>conubia</td>
-                    <td>nostra</td>
-                  </tr>
-                  <tr>
-                    <td>1,014</td>
-                    <td>per</td>
-                    <td>inceptos</td>
-                    <td>himenaeos</td>
-                    <td>Curabitur</td>
-                  </tr>
-                  <tr>
-                    <td>1,015</td>
-                    <td>sodales</td>
-                    <td>ligula</td>
-                    <td>in</td>
-                    <td>libero</td>
-                  </tr>
+                 <?php endforeach; ?>
                 </tbody>
               </table>
             </div>
@@ -269,24 +220,16 @@
         </div>
       </div>
 
-      <footer class="text-muted">
-            <div class="container">
-              <p class="float-right">
-                <a href="#"><i class="ion-arrow-up-c"></i>Back to top</a>
-              </p>
-              <p>&copy; Copyright 2018 Team - Work Hard Play Hard. All Rights Reserved</p>
-              <p>New to WHPH? <a href="index.html">Visit the homepage</a></p>
-            </div>
-          </footer>
-    
-    
-    
-    
-    
-    
-    
-
-          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<footer class="text-muted">
+<div class="container">
+  <p class="float-right">
+    <a href="#"><i class="ion-arrow-up-c"></i>Back to top</a>
+  </p>
+  <p>&copy; Copyright 2018 Team - Work Hard Play Hard. All Rights Reserved</p>
+  <p>New to WHPH? <a href="index.html">Visit the homepage</a></p>
+</div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="../js/script.js"></script>
 
